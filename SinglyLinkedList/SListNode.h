@@ -17,10 +17,14 @@ SListNode<T>::SListNode(T data)
 	this->data = data;
 	this->next = nullptr;
 }
+
 template <class T>
 void SListNode<T>::insertAfter(T data)
 {
 	
+	SListNode<T>* temp = new SListNode<T>(data);
+	temp->setNext(this->getNext());
+	this->setNext(temp);
 
 }
 template <class T>
